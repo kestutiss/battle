@@ -14,3 +14,11 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->group(['prefix' => 'api/v1', 'namespace' => 'App\Http\Controllers'], function ($app) {
+    $app->get('battle', 'BattleController@index');
+    $app->get('battle/{id}', 'BattleController@get');
+    $app->post('battle', 'BattleController@create');
+    $app->put('battle/{id}', 'BattleController@update');
+    $app->delete('battle/{id}', 'BattleController@delete');
+});
