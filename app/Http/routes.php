@@ -21,4 +21,6 @@ $app->group(['prefix' => 'api/v1', 'namespace' => 'App\Http\Controllers'], funct
     $app->post('battle', 'BattleController@create');
     $app->put('battle/{id}', 'BattleController@update');
     $app->delete('battle/{id}', 'BattleController@delete');
+
+    $app->post('battle/duel', 'BattleController@duel');
 });
